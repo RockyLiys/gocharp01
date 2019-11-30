@@ -107,11 +107,11 @@ func main() {
 	if err == nil {
 		fmt.Printf("app 相对位置: %s\n", appProPath)
 	}
-	Ftp() // 简单实现ftp服务
+	//Ftp() // 简单实现ftp服务
 	//Image() // 实现图像输出
 	//Strin()  // 字符串练习
 	//P()     // 指针
 	//Sw()     // 指针交换
 	//Arra()     //数组
-	//Sl()		//切片
+	Sl()		//切片
 }
