@@ -53,8 +53,8 @@ func Image() {
 	image.OutImage()
 }
 
-func Strin()  {
-	var ss string="你好！ 中国，我爱你！！"
+func Strin() {
+	var ss string = "你好！ 中国，我爱你！！"
 	retStr := str.Stri(ss)
 	// 把字符串改为字符串数组
 	angleBytes := []byte(retStr)
@@ -63,8 +63,8 @@ func Strin()  {
 	fmt.Println(str.MutiStr())
 }
 
-func P()  {
-	var c string="hello,world!!"
+func P() {
+	var c string = "hello,world!!"
 	var s string
 	//var ps *string
 	fmt.Println(&c)
@@ -74,24 +74,24 @@ func P()  {
 	s = fmt.Sprintf("%T", *ps)
 	fmt.Println(s)
 }
-func Sw()  {
+func Sw() {
 	x, y := 1, 2
 	ptr.Swap(&x, &y)
-	fmt.Println(x,y)
+	fmt.Println(x, y)
 }
 
-func Arra()  {
+func Arra() {
 	var ar = [6]int{1, 7, 3, 4, 5, 6}
 	q := [...]int{1, 2, 3, 4}
 	fmt.Println(q)
 	arr.Array(ar)
-	var ma [2][2]string = [2][2]string{{"aa","bb"},{"cc","dd"}}
+	var ma [2][2]string = [2][2]string{{"aa", "bb"}, {"cc", "dd"}}
 	arr.MutiArr(ma)
 }
 
-func Sl()  {
+func Sl() {
 	q := [...]int{1, 2, 3, 4}
-	arr.Sli(q)   // Slice 切片
+	arr.Sli(q) // Slice 切片
 	var s []int
 	s = append(s, 11, 22, 33)
 	fmt.Println(s)
@@ -107,11 +107,11 @@ func main() {
 	if err == nil {
 		fmt.Printf("app 相对位置: %s\n", appProPath)
 	}
-	Ftp() // 简单实现ftp服务
+	//Ftp() // 简单实现ftp服务
 	//Image() // 实现图像输出
 	//Strin()  // 字符串练习
 	//P()     // 指针
 	//Sw()     // 指针交换
 	//Arra()     //数组
-	//Sl()		//切片
+	Sl() //切片
 }

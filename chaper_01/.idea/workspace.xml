@@ -4,6 +4,10 @@
     <list default="true" id="568c0e36-7e4a-4984-81c0-e476543c9b3f" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.go" afterDir="false" />
+>>>>>>> 4a0d676fb3015ddaef9429e948d3391a1522783d
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +36,11 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="GOROOT" path="/usr/local/Cellar/go/1.12.4/libexec" />
+=======
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.13.3/libexec" />
+>>>>>>> 4a0d676fb3015ddaef9429e948d3391a1522783d
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -55,7 +63,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
