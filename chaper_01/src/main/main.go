@@ -3,6 +3,7 @@ package main
 import (
 	"demo01/arr"
 	"demo01/image"
+	"demo01/ma"
 	"demo01/ptr"
 	"demo01/str"
 	"fmt"
@@ -10,6 +11,7 @@ import (
 	"httpweb"
 	"math/rand"
 	"os"
+	"sort"
 	"time"
 )
 
@@ -100,6 +102,69 @@ func Sl() {
 	fmt.Println(ss)
 }
 
+func Mp()  {
+	var maL = map[int]string{1:"aaa", 2:"bbbb"}
+	mp := ma.Mp(maL)
+	mp["ccc"] = 4
+	for k,v :=range mp{
+		fmt.Printf("key=%s, value=%d\n", k,v)
+	}
+	intListString := ma.MultiMp()
+	for ke, va := range intListString{
+		for _, val := range va{
+			fmt.Printf("key= %d, val=%s\n",ke, val)
+		}
+	}
+	// 遍历输出元素的顺序与填充顺序无关，不能期望 map 在遍历时返回某种期望顺序的结果
+	fmt.Println("-----------------")
+	intDictString := ma.MultiDict()
+	var sli []int
+	for index, dict :=range intDictString{
+		for ky, v := range dict{
+			fmt.Printf("第%d行, key=%s, value=%s\n", index, ky, v)
+		}
+		sli = append(sli, index)
+	}
+	fmt.Println(sli)
+	// 对map生成有序的key
+	var slic []int
+	for k := range intDictString{
+		slic = append(slic, k)
+	}
+	sort.Ints(slic)
+
+	fmt.Println(slic)
+	for _, index := range slic{
+		fmt.Println(index)
+		for ky, v := range intDictString[index]{
+			fmt.Printf("第%d行, key=%s, value=%s\n", index, ky, v)
+		}
+	}
+}
+func List()  {
+	ls := ma.Lis()
+	fmt.Printf("============== %d\n", ls.Len())
+	for i:=ls.Front();i!=nil ;i=i.Next()  {
+		fmt.Println(i.Value)
+	}
+	fmt.Printf("============== %d\n", ls.Len())
+	fmt.Println(ls.Back().Value)
+	fmt.Println(ls.Front().Value)
+	fmt.Println(ls.Back().Prev().Value)
+
+	ls.MoveToBack(ls.Front())
+	ls.MoveToFront(ls.Back())
+
+	fmt.Printf("============== %d\n", ls.Len())
+	for i:=ls.Front();i!=nil ;i=i.Next()  {
+		fmt.Println(i.Value)
+	}
+}
+
+func SM()  {
+	ma.SyMap()
+}
+
 func main() {
 	// 相对app位置
 	appProPath, err := os.Getwd()
@@ -113,5 +178,8 @@ func main() {
 	//P()     // 指针
 	//Sw()     // 指针交换
 	//Arra()     //数组
-	Sl() //切片
+	//Sl() //切片
+	//Mp()     // map
+	//List()    // list
+	SM()
 }
