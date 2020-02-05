@@ -2,6 +2,7 @@ package main
 
 import (
 	"demo01/arr"
+	"demo01/func_demo"
 	"demo01/image"
 	"demo01/ma"
 	"demo01/ptr"
@@ -165,6 +166,50 @@ func SM()  {
 	ma.SyMap()
 }
 
+func FuncDemo()  {
+	// 直接打印出返回值
+	fmt.Println(func_demo.ResolveTime(1000))
+
+	// 只打印小时与分钟
+	_, hour, minute := func_demo.ResolveTime(18000)
+	fmt.Println(hour, minute)
+
+	// 内要天
+	day, _, _ := func_demo.ResolveTime(90000)
+
+	fmt.Println(day)
+}
+
+func PByVal()  {
+	// 准备传入函数的结构
+	in := func_demo.Data{
+		Complax: []int{1, 2, 3},
+		Instance: func_demo.InnerData{
+			A: 5,
+		},
+
+		Ptr: &func_demo.InnerData{
+			A: 1,
+		},
+	}
+
+	// 输入结构的成员情况
+	fmt.Printf("输入初始化结构 in value: %+v\n", in)
+
+	// 输入结构的指针地址
+	fmt.Printf("in ptr: %p\n", &in)
+
+	// 传入结构体, 返回同类型的结构
+	out := func_demo.PassByValue(in)
+
+	// 输出结构的成员情况
+	fmt.Printf("out value: %+v\n", out)
+
+	// 输出结构的指针地址
+	fmt.Printf("out ptr: %p\n", &out)
+
+}
+
 func main() {
 	// 相对app位置
 	appProPath, err := os.Getwd()
@@ -181,5 +226,7 @@ func main() {
 	//Sl() //切片
 	//Mp()     // map
 	//List()    // list
-	SM()
+	//SM()      // sm
+	//FuncDemo()  // 函数操作,形参,实参,返回值,与接收值的练习
+	PByVal()
 }
