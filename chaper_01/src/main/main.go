@@ -2,7 +2,7 @@ package main
 
 import (
 	"demo01/arr"
-	"demo01/func_demo"
+	"demo01/function"
 	"demo01/image"
 	"demo01/ma"
 	"demo01/ptr"
@@ -168,27 +168,27 @@ func SM()  {
 
 func FuncDemo()  {
 	// 直接打印出返回值
-	fmt.Println(func_demo.ResolveTime(1000))
+	fmt.Println(function.ResolveTime(1000))
 
 	// 只打印小时与分钟
-	_, hour, minute := func_demo.ResolveTime(18000)
+	_, hour, minute := function.ResolveTime(18000)
 	fmt.Println(hour, minute)
 
 	// 内要天
-	day, _, _ := func_demo.ResolveTime(90000)
+	day, _, _ := function.ResolveTime(90000)
 
 	fmt.Println(day)
 }
 
 func PByVal()  {
 	// 准备传入函数的结构
-	in := func_demo.Data{
+	in := function.Data{
 		Complax: []int{1, 2, 3},
-		Instance: func_demo.InnerData{
+		Instance: function.InnerData{
 			A: 5,
 		},
 
-		Ptr: &func_demo.InnerData{
+		Ptr: &function.InnerData{
 			A: 1,
 		},
 	}
@@ -200,7 +200,7 @@ func PByVal()  {
 	fmt.Printf("in ptr: %p\n", &in)
 
 	// 传入结构体, 返回同类型的结构
-	out := func_demo.PassByValue(in)
+	out := function.PassByValue(in)
 
 	// 输出结构的成员情况
 	fmt.Printf("out value: %+v\n", out)
@@ -211,16 +211,16 @@ func PByVal()  {
 }
 
 func FunAsParams()  {
-	fun := func_demo.FunAsParams()
+	fun := function.FunAsParams()
 	fun()
 }
 
 func FunStringProcess()  {
-	func_demo.StringProcess()
+	function.StringProcess()
 }
 
 func Lambda()  {
-	func_demo.FunLambda()
+	function.FunLambda()
 }
 
 func main() {

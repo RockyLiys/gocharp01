@@ -1,4 +1,4 @@
-package func_demo
+package function
 
 import "fmt"
 
