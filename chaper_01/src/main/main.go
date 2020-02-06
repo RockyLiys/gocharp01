@@ -210,6 +210,19 @@ func PByVal()  {
 
 }
 
+func FunAsParams()  {
+	fun := func_demo.FunAsParams()
+	fun()
+}
+
+func FunStringProcess()  {
+	func_demo.StringProcess()
+}
+
+func Lambda()  {
+	func_demo.FunLambda()
+}
+
 func main() {
 	// 相对app位置
 	appProPath, err := os.Getwd()
@@ -228,5 +241,9 @@ func main() {
 	//List()    // list
 	//SM()      // sm
 	//FuncDemo()  // 函数操作,形参,实参,返回值,与接收值的练习
-	PByVal()
+	//PByVal()
+	//FunAsParams()  // 把函数作为类型
+	//FunStringProcess()  // 链式处理器
+	Lambda()
 }
+
