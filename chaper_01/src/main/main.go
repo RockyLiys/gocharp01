@@ -223,6 +223,40 @@ func Lambda()  {
 	function.FunLambda()
 }
 
+func FuncImplInterface()  {
+	function.FuncImplInterface()
+}
+
+func Closure()  {
+	function.Accumulate()
+	fmt.Println("<===================>")
+	function.PlayerGenerator()
+}
+
+func Args()  {
+	function.JoinStr()
+	fmt.Println("<===================>")
+	function.PrintTypeVal()
+	fmt.Println("<===================>")
+	function.Print()
+}
+
+func Err()  {
+	function.Div()
+}
+
+func PanicDefer()  {
+	function.PanicDefer()
+}
+
+func panicRecover()  {
+	function.ProtectRun()
+}
+
+func TestTime()  {
+	function.Time()
+}
+
 func main() {
 	// 相对app位置
 	appProPath, err := os.Getwd()
@@ -244,6 +278,13 @@ func main() {
 	//PByVal()
 	//FunAsParams()  // 把函数作为类型
 	//FunStringProcess()  // 链式处理器
-	Lambda()
+	//Lambda()   // 匿名函数
+	//FuncImplInterface()   // 函数实现接口
+	//Closure()  // 闭包,具有记忆能力
+	//Args()  // 可变参数
+	//Err()   // 错误的处理方法
+	//PanicDefer()  // panic defer 先执行defer 后宕机(panic)
+	//panicRecover()   // panic 中recover 恢复
+	TestTime()   // 计算函数的运行时间
 }
 
