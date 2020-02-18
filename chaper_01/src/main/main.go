@@ -7,6 +7,7 @@ import (
 	"demo01/ma"
 	"demo01/ptr"
 	"demo01/str"
+	"demo01/structs"
 	"fmt"
 	"global"
 	"httpweb"
@@ -257,6 +258,25 @@ func TestTime()  {
 	function.Time()
 }
 
+func InitStruct()  {
+	structs.InitStruct()
+}
+
+func Constructor()  {
+	structs.Input()
+}
+
+func FuncInStruct()  {
+	//structs.Insert()
+	//structs.TwoDimensionalVector()
+	const speed = 2
+	structs.NewPlayer(speed)
+}
+
+func FuncInType()  {
+	structs.Handles()
+}
+
 func main() {
 	// 相对app位置
 	appProPath, err := os.Getwd()
@@ -285,6 +305,10 @@ func main() {
 	//Err()   // 错误的处理方法
 	//PanicDefer()  // panic defer 先执行defer 后宕机(panic)
 	//panicRecover()   // panic 中recover 恢复
-	TestTime()   // 计算函数的运行时间
+	//TestTime()   // 计算函数的运行时间
+	//InitStruct()   // 结构体的定义
+	//Constructor()   // 结构体模拟面向对象
+	//FuncInStruct()    // 给结构体中添加方法
+	FuncInType()  // 给任意类型添加方法
 }
 
