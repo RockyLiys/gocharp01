@@ -10,7 +10,7 @@ import (
 
 func main() {
 	//beego默认配置
-	beego.BConfig.AppName = "beegoproject"
+	//beego.BConfig.AppName = "beegoproject"
 	beego.BConfig.RouterCaseSensitive = true //true，区分大小写
 
 	beego.BConfig.Log.AccessLogs = true //是否输出日志到 Log
