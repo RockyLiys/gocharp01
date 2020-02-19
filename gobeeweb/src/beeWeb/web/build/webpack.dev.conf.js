@@ -1,4 +1,9 @@
-module.exports = function (env, args) {
+const webpack = require('webpack')
+const path = require("path")
+
+config = (env, args) => {
+    console.log(env);
+    console.log(args);
     return {
         mode: 'development',  // 可以在cli上添加 webpack --mode=development   env.production ? 'production' :
         entry: "./src/index.tsx",
@@ -18,7 +23,7 @@ module.exports = function (env, args) {
         },
         devServer: {
             // contentBase: path.join(__dirname, 'dist'),
-            // compress: true,
+            compress: true,
             inline: true,
             port: 9000,
             open: true,
@@ -55,6 +60,20 @@ module.exports = function (env, args) {
             "react": "React",
             "react-dom": "ReactDOM"
         },
-        plugins: []
+        plugins: [
+            // 设置环境变量信息
+            new webpack.DefinePlugin({
+                PRODUCTION: JSON.stringify(true),
+                VERSION: JSON.stringify('5fa3b9'),
+                BROWSER_SUPPORTS_HTML5: true,
+                TWO: '1+1',
+                'typeof window': JSON.stringify('object'),
+                'process.env': {
+                    NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+                }
+            })
+        ]
     }
 };
+
+module.exports = config
