@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const path = require("path")
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 
 config = (env, args) => {
     console.log(env);
@@ -23,8 +24,9 @@ config = (env, args) => {
         },
         devServer: {
             // contentBase: path.join(__dirname, 'dist'),
-            compress: true,
+            // compress: true,
             inline: true,
+            host: '0.0.0.0',
             port: 9000,
             open: true,
             hot: true,
@@ -33,9 +35,12 @@ config = (env, args) => {
                 const port = server.listeningApp.address().port;
                 console.log('Listening on port:', port);
             },
-            proxy: {
-                '/api': 'http://localhost:9876'
-            }
+            disableHostCheck: false,
+            proxy: [{
+                context: ['/api/**', '/u/**'],
+                target: 'http://localhost:9876',
+                secure: false
+            }]
         },
         performance: {
             assetFilter: function(assetFilename) {
@@ -71,7 +76,9 @@ config = (env, args) => {
                 'process.env': {
                     NODE_ENV: JSON.stringify(process.env.NODE_ENV)
                 }
-            })
+            }),
+            new AntdDayjsWebpackPlugin()
+            // ["import", { "libraryName": "antd", "style": "css" }] // `style: true` 会加载 less 文件
         ]
     }
 };
